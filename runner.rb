@@ -1,13 +1,14 @@
 require 'unirest'
 
-response = Unirest.get("http://localhost:3000/api/all_products")
-p "all the products"
-p response.body 
+# create action
 
-response = Unirest.get("http://localhost:3000/api/first_product")
-p "the first product"
-p response.body
+response = Unirest.post("localhost:3000/api/products",
+  parameters: {
+    input_name: "Nerf Gun Blaster",
+    input_price: 20,
+    input_image_url: "",
+    input_description: "Nerf gun blaster with 20 glow-in-the-dark bullets." 
+  }
+)
 
-response = Unirest.get("http://localhost:3000/api/second_product")
-p "the second product"
 p response.body
