@@ -3,21 +3,30 @@ require 'unirest'
 
 # create action
 # response = Unirest.post("localhost:3000/api/products",
-#   parameters: {
-#     input_name: "Nerf Gun Blaster",
-#     input_price: 20,
-#     input_image_url: "",
-#     input_description: "Nerf gun blaster with 20 glow-in-the-dark bullets." 
+#    parameters: {
+#      input_name: "American Girl Doll",
+#      input_price: 100,
+#      input_image_url: "",
+#      input_description: "From the past to present and for girls of all ages." 
 #   }
 # )
 
 # p response.body
 
-# update action
-response = Unirest.patch("localhost:3000/api/products/5",
-  parameters: {
-    input_name: "Nerf Gun MegaBlaster",
-  }
-)
+ # update action
+ response = Unirest.patch("localhost:3000/api/products/2",
+   parameters: {
+     input_image_url: ""
+   }
+ )
 
-p response.body
+# p response.body
+
+# response = Unirest.delete("localhost:3000/api/products/4")
+
+# p response.body
+
+# response = Unirest.delete("localhost:3000/api/products/3")
+
+# p response.body
+
