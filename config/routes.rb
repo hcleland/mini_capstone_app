@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     get "/products/:id" => "products#show"
     # create - make a new product in the db
     post "/products" => "products#create"
+    # update - change a product currently in the db
+    patch "/products/:id" => "products#update"
   end
 end

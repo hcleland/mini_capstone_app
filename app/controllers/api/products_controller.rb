@@ -32,4 +32,18 @@ class Api::ProductsController < ApplicationController
       render "show.json.jbuilder"
   end
 
+  def update
+    # get a product from the db
+    product_id = params[:id]
+    # grab a particular recipe from the db
+    @product1 = Product.find_by(id: product_id)
+    # modify that product
+    @product1.name = params[:input_name] || @product1.name
+    @product1.price = params[:input_price] || @product1.price
+    @product1.image_url = params[:input_image_url] || @product1.image_url
+    @product1.description = params[:input_description] || @product1.description
+    @product1.save
+    render "show.json.jbuilder"
+  end
+
 end
