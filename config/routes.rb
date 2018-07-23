@@ -12,5 +12,14 @@ Rails.application.routes.draw do
     patch "/products/:id" => "products#update"
     # destroy - remove a product from the db
     delete "/products/:id" => "products#destroy"
+
+    post "/users" => "users#create"
+    post "/sessions" => "sessions#create"
+    
+    get "/orders/:id" => "orders#show"
+    post "/orders" => "orders#create"
+
+    get "/carted_products" => "carted_products#index"
+    post "/carted_products" => "carted_products#create"
   end
 end
